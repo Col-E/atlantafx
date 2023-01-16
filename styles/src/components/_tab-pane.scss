@@ -4,7 +4,7 @@
 @use "../settings/effects";
 @use "../settings/icons";
 
-$color-bg:     -color-bg-default     !default;
+$color-bg:     -color-base-2         !default;
 $color-fg:     -color-fg-default     !default;
 $color-border: -color-border-default !default;
 
@@ -13,9 +13,9 @@ $color-tb-bg-hover:     -color-bg-subtle      !default;
 $color-tb-fg-hover:     -color-fg-default     !default;
 $color-tb-border-hover: -color-border-default !default;
 
-$color-tb-bg-selected:     -color-bg-default      !default;
-$color-tb-fg-selected:     -color-fg-default      !default;
-$color-tb-border-selected: -color-accent-emphasis !default;
+$color-tb-bg-selected:     -color-bg-default !default;
+$color-tb-fg-selected:     -color-fg-default !default;
+$color-tb-border-selected: -color-flair-9    !default;
 
 // vertical tabs (lr, left+right)
 $color-lr-bg-hover:     -color-bg-subtle      !default;
@@ -23,8 +23,8 @@ $color-lr-fg-hover:     -color-fg-default     !default;
 $color-lr-border-hover: -color-border-default !default;
 
 $color-lr-bg-selected:     if(cfg.$darkMode, -color-base-7, -color-base-1) !default;
-$color-lr-fg-selected:     -color-fg-default     !default;
-$color-lr-border-selected: -color-border-default !default;
+$color-lr-fg-selected:     -color-fg-default !default;
+$color-lr-border-selected: -color-flair-9    !default;
 
 $tab-padding-x:       0.6em !default;
 $tab-padding-x-dense: 0.3em !default;
@@ -41,14 +41,14 @@ $tab-lr-label-padding-x-dense: 0.3em !default;
 $tab-lr-label-padding-y:       0.2em !default;
 $tab-lr-label-padding-y-dense: 0.15em !default;
 
-$header-border-width: 2px !default;
+$header-border-width: 1px !default;
 
 // floating tabs
 $color-float-bg:     -color-bg-inset       !default;
 $color-float-border: -color-border-default !default;
 
-$color-float-bg-selected:     -color-bg-default     !default;
-$color-float-border-selected: -color-border-default !default;
+$color-float-bg-selected:     -color-bg-default !default;
+$color-float-border-selected: -color-flair-9    !default;
 
 $tab-float-label-padding-x:       0.55em !default;
 $tab-float-label-padding-x-dense: 0.35em  !default;
@@ -249,7 +249,13 @@ $tab-float-width:           150px !default;
             }
           }
 
-          &:hover,
+          &:hover {
+            >.tab-container {
+              -fx-background-color: $color-float-bg;
+              -fx-border-color: $color-float-border, transparent;
+            }
+          }
+
           &:selected {
             >.tab-container {
               -fx-background-color: $color-float-bg-selected;

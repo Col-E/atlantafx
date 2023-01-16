@@ -13,9 +13,9 @@
 
   &:selected,
   &:selected:focused {
-    -fx-background-color: -color-button-bg-selected;
+    -fx-background-color: -color-border-default, -color-button-bg-selected;
     -fx-text-fill: -color-button-fg-selected;
-    -fx-background-insets: 0;
+    -fx-background-insets: 1, 0;
 
     #{cfg.$font-icon-selector} {
       -fx-fill: -color-button-fg-selected;

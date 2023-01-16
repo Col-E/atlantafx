@@ -18,7 +18,7 @@ $separator-padding:       map-get(cfg.$separators, "small") !default;
 .menu-bar {
 
   -fx-background-color: -color-border-muted, $color-menubar-bg;
-  -fx-background-insets: 0 0 0 0, 0 0 1 0;
+  -fx-background-insets: -1;
   -fx-background-radius: 0;
   -fx-padding: 0;
 

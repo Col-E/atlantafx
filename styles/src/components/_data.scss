@@ -3,17 +3,17 @@
 @use "../settings/config" as cfg;
 @use "../settings/icons";
 
-$color-cell-bg:                  -color-bg-default !default;
+$color-cell-bg:                  -color-base-2 !default;
 $color-cell-fg:                  -color-fg-default !default;
-$color-cell-bg-selected:         if(cfg.$darkMode, -color-base-6, -color-base-1) !default;
+$color-cell-bg-selected:         if(cfg.$darkMode, -color-base-3, -color-base-1) !default;
 $color-cell-fg-selected:         -color-fg-default !default;
 $color-cell-bg-selected-focused: $color-cell-bg-selected !default;
 $color-cell-fg-selected-focused: $color-cell-fg-selected !default;
-$color-cell-bg-odd:              -color-bg-subtle      !default;
+$color-cell-bg-odd:              -color-base-3         !default;
 $color-cell-border:              -color-border-default !default;
 $color-disclosure:               -color-fg-muted       !default;
 
-$color-header-bg: -color-bg-subtle  !default;
+$color-header-bg: -color-base-2     !default;
 $color-header-fg: -color-fg-default !default;
 
 $color-resize-line:  -color-accent-emphasis !default;

@@ -23,7 +23,7 @@ $thumb-area-padding: 0.85em 1.4em 0.85em 1.4em !default;
 
   >.thumb {
     -fx-background-color:-color-border-default, -color-fg-emphasis;
-    -fx-background-insets: 0, $thumb-border-width;
+    -fx-background-insets: 1, $thumb-border-width;
     -fx-background-radius: $thumb-radius;
     -fx-padding: $thumb-padding;
     -fx-alignment: CENTER;
@@ -45,8 +45,8 @@ $thumb-area-padding: 0.85em 1.4em 0.85em 1.4em !default;
     }
 
     >.thumb-area {
-      -fx-background-color: -color-accent-emphasis;
-      -fx-background-insets: 0;
+      -fx-background-color: -color-accent-8, -color-flair-9;
+      -fx-background-insets: 0, cfg.$border-width;
     }
   }
 

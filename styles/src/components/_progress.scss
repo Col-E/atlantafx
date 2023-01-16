@@ -7,11 +7,11 @@
 //  ProgressBar                                                              //
 ///////////////////////////////////////////////////////////////////////////////
 
-$color-bar-track: -color-bg-subtle       !default;
-$color-bar-fill:  -color-accent-emphasis !default;
+$color-bar-track: -color-bg-subtle !default;
+$color-bar-fill:  -color-flair-8 !default;
 
 $color-ring-indicator-track: -color-bg-subtle !default;
-$color-ring-indicator-fill:  -color-accent-emphasis !default;
+$color-ring-indicator-fill:  -color-flair-8 !default;
 
 $size: (
   "small":  2px,
@@ -81,7 +81,7 @@ $size: (
     }
 
     >.progress {
-      -fx-background-color: -color-accent-emphasis;
+      -fx-background-color: -color-flair-8;
       -fx-padding: 0.6em; // limits tick size
     }
 

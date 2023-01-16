@@ -1,0 +1,189 @@
+// SPDX-License-Identifier: MIT
+
+@use "sass:color";
+@use "settings/utils" as utils;
+
+// Recaf color palette
+$nord_darkest:  rgb(35, 35, 36);
+$nord_base:     rgb(66, 66, 67);
+$nord_accent:   rgb(131, 132, 134);
+$nord_light:    rgb(163, 163, 163);
+$nord_white:    rgb(253, 253, 254);
+
+$nord_red:      rgb(209, 44, 41);
+$nord_green:    rgb(53, 176, 61);
+$nord_blue:     rgb(53, 110, 181);
+$nord_orange:   rgb(209, 107, 44);
+
+@forward "settings/color-scale" with (
+
+  $dark:      $nord_darkest,
+  $light:     $nord_white,
+
+  $base-0:    color.adjust($nord_base, $lightness: -16%),
+  $base-1:    color.adjust($nord_base, $lightness: -14%),
+  $base-2:    color.adjust($nord_base, $lightness: -12%),
+  $base-3:    color.adjust($nord_base, $lightness: -10%),
+  $base-4:    color.adjust($nord_base, $lightness: -8%),
+  $base-5:    color.adjust($nord_base, $lightness: -6%),
+  $base-6:    color.adjust($nord_base, $lightness: -4%),
+  $base-7:    color.adjust($nord_base, $lightness: -2%),
+  $base-8:    $nord_base,
+  $base-9:    color.adjust($nord_base, $lightness: +2%),
+
+  $accent-0:  color.adjust($nord_accent, $lightness: -40%),
+  $accent-1:  color.adjust($nord_accent, $lightness: -35%),
+  $accent-2:  color.adjust($nord_accent, $lightness: -30%),
+  $accent-3:  color.adjust($nord_accent, $lightness: -20%),
+  $accent-4:  color.adjust($nord_accent, $lightness: -10%),
+  $accent-5:  $nord_accent,
+  $accent-6:  color.adjust($nord_accent, $lightness: +10%),
+  $accent-7:  color.adjust($nord_accent, $lightness: +20%),
+  $accent-8:  color.adjust($nord_accent, $lightness: +30%),
+  $accent-9:  color.adjust($nord_accent, $lightness: +40%),
+
+  $flair-0: color.adjust($nord_blue, $lightness: -40%),
+  $flair-1: color.adjust($nord_blue, $lightness: -35%),
+  $flair-2: color.adjust($nord_blue, $lightness: -30%),
+  $flair-3: color.adjust($nord_blue, $lightness: -25%),
+  $flair-4: color.adjust($nord_blue, $lightness: -20%),
+  $flair-5: color.adjust($nord_blue, $lightness: -15%),
+  $flair-6: color.adjust($nord_blue, $lightness: -10%),
+  $flair-7: color.adjust($nord_blue, $lightness: -5%),
+  $flair-8: $nord_blue,
+  $flair-9: color.adjust($nord_blue, $lightness: +10%),
+
+  $success-0: color.adjust($nord_green, $lightness: -40%),
+  $success-1: color.adjust($nord_green, $lightness: -35%),
+  $success-2: color.adjust($nord_green, $lightness: -30%),
+  $success-3: color.adjust($nord_green, $lightness: -25%),
+  $success-4: color.adjust($nord_green, $lightness: -20%),
+  $success-5: color.adjust($nord_green, $lightness: -15%),
+  $success-6: color.adjust($nord_green, $lightness: -10%),
+  $success-7: color.adjust($nord_green, $lightness: -5%),
+  $success-8: $nord_green,
+  $success-9: color.adjust($nord_green, $lightness: +5%),
+
+  $warning-0: color.adjust($nord_orange, $lightness: -40%),
+  $warning-1: color.adjust($nord_orange, $lightness: -35%),
+  $warning-2: color.adjust($nord_orange, $lightness: -30%),
+  $warning-3: color.adjust($nord_orange, $lightness: -25%),
+  $warning-4: color.adjust($nord_orange, $lightness: -20%),
+  $warning-5: color.adjust($nord_orange, $lightness: -15%),
+  $warning-6: color.adjust($nord_orange, $lightness: -10%),
+  $warning-7: color.adjust($nord_orange, $lightness: -5%),
+  $warning-8: $nord_orange,
+  $warning-9: color.adjust($nord_orange, $lightness: +5%),
+
+  $danger-0:  color.adjust($nord_red, $lightness: -40%),
+  $danger-1:  color.adjust($nord_red, $lightness: -35%),
+  $danger-2:  color.adjust($nord_red, $lightness: -30%),
+  $danger-3:  color.adjust($nord_red, $lightness: -25%),
+  $danger-4:  color.adjust($nord_red, $lightness: -20%),
+  $danger-5:  color.adjust($nord_red, $lightness: -15%),
+  $danger-6:  color.adjust($nord_red, $lightness: -10%),
+  $danger-7:  color.adjust($nord_red, $lightness: -5%),
+  $danger-8:  $nord_red,
+  $danger-9:  color.adjust($nord_red, $lightness: +5%)
+);
+
+@use "settings/color-scale" as scale;
+
+@forward "settings/color-vars" with (
+
+  $fg-default:           scale.$accent-7,
+  $fg-muted:             scale.$accent-4,
+  $fg-subtle:            scale.$accent-5,
+  $fg-onEmphasis:        scale.$light,
+
+  $canvas-default:       scale.$base-4,
+  $canvas-overlay:       scale.$base-4,
+  $canvas-inset:         scale.$dark,
+  $canvas-subtle:        scale.$base-3,
+
+  $border-default:       scale.$accent-5,
+  $border-muted:         scale.$accent-3,
+  $border-subtle:        scale.$base-0,
+  $shadow-default:       scale.$dark,
+
+  $neutral-emphasisPlus: scale.$base-0,
+  $neutral-emphasis:     scale.$base-1,
+  $neutral-muted:        utils.flattenColor(scale.$base-3, color.change(scale.$base-2, $alpha: 0.4)),
+  $neutral-subtle:       utils.flattenColor(scale.$base-3, color.change(scale.$base-2, $alpha: 0.2)),
+
+  $accent-fg:            scale.$accent-9,
+  $accent-emphasis:      scale.$base-9,
+  $accent-muted:         utils.flattenColor(scale.$base-3, color.change(scale.$accent-2, $alpha: 0.4)),
+  $accent-subtle:        utils.flattenColor(scale.$base-3, color.change(scale.$accent-2, $alpha: 0.1)),
+
+  $success-fg:           scale.$success-6,
+  $success-emphasis:     scale.$success-9,
+  $success-muted:        utils.flattenColor(scale.$base-6, color.change(scale.$success-2, $alpha: 0.4)),
+  $success-subtle:       utils.flattenColor(scale.$base-6, color.change(scale.$success-2, $alpha: 0.1)),
+
+  $warning-fg:           scale.$warning-6,
+  $warning-emphasis:     scale.$warning-9,
+  $warning-muted:        utils.flattenColor(scale.$base-6, color.change(scale.$warning-2, $alpha: 0.4)),
+  $warning-subtle:       utils.flattenColor(scale.$base-6, color.change(scale.$warning-2, $alpha: 0.1)),
+
+  $danger-fg:            scale.$danger-6,
+  $danger-emphasis:      scale.$danger-9,
+  $danger-muted:         utils.flattenColor(scale.$base-6, color.change(scale.$danger-2, $alpha: 0.4)),
+  $danger-subtle:        utils.flattenColor(scale.$base-6, color.change(scale.$danger-2, $alpha: 0.1))
+);
+
+@forward "settings/config" with (
+  $darkMode:         true,
+  $border-radius:    1,
+  $opacity-disabled: 0.55
+);
+
+@use "general";
+
+@forward "components/button" as button-* with (
+  $color-bg-hover: -color-base-5
+);
+
+@forward "components/combo-box" as combo-box-* with (
+  $color-list-bg-hover:    -color-base-6,
+  $color-list-bg-selected: -color-base-5
+);
+
+@forward "components/data" as data-* with (
+  $color-cell-bg-selected: -color-base-5
+);
+
+@forward "components/menu" as menu-* with (
+  $color-menubar-bg: -color-base-1,
+  $color-menubar-bg-hover: -color-base-2,
+  $color-menuitem-bg: -color-base-1,
+  $color-menuitem-bg-hover: -color-base-2,
+);
+
+@forward "components/pagination" as pagination-* with (
+  $button-radius: 1
+);
+
+@forward "components/slider" as slider-* with (
+  $thumb-size: (
+    "small-h": 8px, "medium-h": 10px, "large-h": 14px,
+    "small-w": 4px, "medium-w": 4px,  "large-w": 4px
+  ),
+  $track-size: ("small": 2px, "medium": 4px, "large": 12px),
+  $thumb-radius: 1,
+  $track-radius: 1
+);
+
+@forward "components/toolbar" as toolbar-* with (
+  $color-bg-selected: -color-base-5
+);
+
+@forward "components/toggle-switch" as toggle-switch-* with (
+  $thumb-radius:       1,
+  $thumb-area-radius:  1,
+  $thumb-padding:      0.8em,
+  $thumb-area-padding: 0.8em 1.6em 0.8em 1.6em,
+  $thumb-border-width: 1px
+);
+
+@use "components";
