@@ -104,17 +104,17 @@
   -color-accent-muted:          vars.$accent-muted;
   -color-accent-subtle:         vars.$accent-subtle;
 
-  -color-warning-fg:            vars.$warning-fg;
+  -color-warning-fg:            vars.$warning-emphasis;
   -color-warning-emphasis:      vars.$warning-emphasis;
   -color-warning-muted:         vars.$warning-muted;
   -color-warning-subtle:        vars.$warning-subtle;
 
-  -color-success-fg:            vars.$success-fg;
+  -color-success-fg:            vars.$success-emphasis;
   -color-success-emphasis:      vars.$success-emphasis;
   -color-success-muted:         vars.$success-muted;
   -color-success-subtle:        vars.$success-subtle;
 
-  -color-danger-fg:             vars.$danger-fg;
+  -color-danger-fg:             vars.$danger-emphasis;
   -color-danger-emphasis:       vars.$danger-emphasis;
   -color-danger-muted:          vars.$danger-muted;
   -color-danger-subtle:         vars.$danger-subtle;
