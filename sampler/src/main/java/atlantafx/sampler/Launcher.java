@@ -37,7 +37,8 @@ public class Launcher extends Application {
     );
 
     public static final List<KeyCodeCombination> SUPPORTED_HOTKEYS = List.of(
-            new KeyCodeCombination(KeyCode.F, KeyCombination.CONTROL_DOWN)
+            new KeyCodeCombination(KeyCode.F, KeyCombination.CONTROL_DOWN),
+            new KeyCodeCombination(KeyCode.R, KeyCombination.CONTROL_DOWN)
     );
 
     public static void main(String[] args) {
@@ -63,6 +64,12 @@ public class Launcher extends Application {
         if (IS_DEV_MODE) {
             startCssFX(scene);
         }
+
+        DefaultEventBus.getInstance().subscribe(HotkeyEvent.class, e -> {
+            if (e.getKeys().getControl() == KeyCombination.ModifierValue.DOWN && e.getKeys().getCode() == KeyCode.R) {
+                tm.refresh();
+            }
+        });
 
         scene.getStylesheets().addAll(Resources.resolve("assets/styles/index.css"));
 

@@ -92,6 +92,10 @@ public final class ThemeManager {
         EVENT_BUS.publish(new ThemeEvent(EventType.THEME_CHANGE));
     }
 
+    public void refresh() {
+        setTheme(getTheme());
+    }
+
     public String getFontFamily() {
         return fontFamily;
     }
