@@ -149,6 +149,12 @@ $nord_orange:   rgb(209, 107, 44);
   $color-list-bg-selected: -color-base-5
 );
 
+@forward "components/text-input" as combo-box-* with (
+  $color-border:         -color-base-9,
+  $color-border-focused: -color-accent-5,
+  $color-bg-highlight:   -color-flair-6
+);
+
 @forward "components/data" as data-* with (
   $color-cell-bg-selected: -color-base-5
 );
