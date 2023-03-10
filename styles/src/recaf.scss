@@ -184,6 +184,10 @@ $nord_orange:   rgb(209, 107, 44);
   $color-bg-selected: -color-base-5
 );
 
+@forward "components/tab-pane" as tab-pane-* with (
+  $color-border: -color-accent-3
+);
+
 @forward "components/toggle-switch" as toggle-switch-* with (
   $thumb-radius:       1,
   $thumb-area-radius:  1,
