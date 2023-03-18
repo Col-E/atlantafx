@@ -155,6 +155,11 @@ $nord_orange:   rgb(209, 107, 44);
   $color-bg-highlight:   -color-flair-6
 );
 
+@forward "components/spinner" as spinner-* with (
+  $color-border:         -color-base-9,
+  $color-border-focused: -color-accent-5
+);
+
 @forward "components/data" as data-* with (
   $color-cell-bg-selected: -color-base-5
 );

@@ -3,14 +3,16 @@
 @use "../settings/config" as cfg;
 @use "../settings/icons";
 
-$color-button-bg:    -color-bg-subtle   !default;
-$color-button-fg:    -color-fg-default !default;
-$color-button-hover: if(cfg.$darkMode, -color-base-6, -color-base-2) !default;
+$color-button-bg:      -color-bg-subtle   !default;
+$color-button-fg:      -color-fg-default !default;
+$color-button-hover:   if(cfg.$darkMode, -color-base-6, -color-base-2) !default;
+$color-border:         -color-border-default !default;
+$color-border-focused: -color-accent-emphasis !default;
 $icon-padding-x:     0.25em !default;
 
 .spinner {
   -fx-background-color: -color-bg-default;
-  -fx-border-color:  -color-border-default;
+  -fx-border-color:  $color-border;
   -fx-border-radius: cfg.$border-radius;
   -fx-border-width:  cfg.$border-width;
 
@@ -67,7 +69,7 @@ $icon-padding-x:     0.25em !default;
   &:focused,
   &:contains-focus {
     &:focused {
-      -fx-border-color: -color-accent-emphasis;
+      -fx-border-color: $color-border-focused;
     }
   }
 
