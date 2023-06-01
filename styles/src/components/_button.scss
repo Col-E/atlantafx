@@ -177,33 +177,18 @@ $color-shadow: -color-shadow-default !default;
     -fx-background-radius: cfg.$border-radius 0 0 cfg.$border-radius, cfg.$inner-border-radius 0 0 cfg.$inner-border-radius;
     -fx-background-insets: 0, cfg.$border-width 0 cfg.$border-width cfg.$border-width;
     -fx-effect: none;
-
-    &:hover,
-    &:focused {
-      -fx-background-insets: 0, cfg.$border-width;
-    }
   }
 
   &.center-pill {
     -fx-background-radius: 0;
     -fx-background-insets: 0, cfg.$border-width 0 cfg.$border-width 0;
     -fx-effect: none;
-
-    &:hover,
-    &:focused {
-      -fx-background-insets: 0, cfg.$border-width;
-    }
   }
 
   &.right-pill {
     -fx-background-radius: 0 cfg.$border-radius cfg.$border-radius 0, 0 cfg.$inner-border-radius cfg.$inner-border-radius 0;
     -fx-background-insets: 0, cfg.$border-width cfg.$border-width cfg.$border-width 0;
     -fx-effect: none;
-
-    &:hover,
-    &:focused {
-      -fx-background-insets: 0, cfg.$border-width;
-    }
   }
 }
 

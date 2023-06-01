@@ -10,10 +10,10 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 $color-menubar-bg:        -color-bg-subtle !default;
-$color-menubar-bg-hover:  if(cfg.$darkMode, -color-base-6, -color-base-1) !default;
+$color-menubar-bg-hover:  if(cfg.$darkMode, -color-base-7, -color-base-1) !default;
 
 $color-menuitem-bg:       -color-bg-default !default;
-$color-menuitem-bg-hover: if(cfg.$darkMode, -color-base-7, -color-base-1) !default;
+$color-menuitem-bg-hover: if(cfg.$darkMode, -color-border-subtle, -color-base-1) !default;
 $color-menuitem-fg:       -color-fg-default !default;
 $color-menuitem-fg-hover: -color-fg-default !default;
 
@@ -23,19 +23,19 @@ $menu-button-padding-y:   cfg.$menu-padding-y - math.div(cfg.$menubar-padding-y,
 
 .menu-bar {
 
-  -fx-background-color: -color-border-muted, $color-menubar-bg;
-  -fx-background-insets: 0 0 0 0, 0 0 1 0;
+  -fx-background-color: $color-menubar-bg;
+  -fx-background-insets: 0 0 1 0;
   -fx-background-radius: 0;
   -fx-padding: 0;
 
   >.container {
-    -fx-padding: cfg.$menubar-padding-y cfg.$menubar-padding-x cfg.$menubar-padding-y cfg.$menubar-padding-x;
+    -fx-padding: 0;
 
     >.menu-button {
       -fx-background-color: transparent;
       -fx-background-insets: 0 0 cfg.$border-width 0;
       -fx-background-radius: cfg.$popup-radius;
-      -fx-padding: $menu-button-padding-y $menu-button-padding-x $menu-button-padding-y $menu-button-padding-x;
+      -fx-padding: 10 14 10 14;
       -fx-effect: none;
 
       // reset padding of menu buttons when in menu bar
@@ -132,7 +132,7 @@ $menu-button-padding-y:   cfg.$menu-padding-y - math.div(cfg.$menubar-padding-y,
   }
 
   &:focused {
-    -fx-background-color: $color-menuitem-bg-hover, $color-menuitem-bg-hover;
+    -fx-background-color: $color-menuitem-bg-hover;
 
     >.label {
       -fx-text-fill: $color-menuitem-fg-hover;
@@ -197,9 +197,9 @@ $menu-button-padding-y:   cfg.$menu-padding-y - math.div(cfg.$menubar-padding-y,
 ///////////////////////////////////////////////////////////////////////////////
 
 .context-menu {
-  -fx-background-color: -color-border-muted, $color-menuitem-bg;
+  -fx-background-color: -color-border-default, $color-menuitem-bg;
   -fx-background-insets: 0, 1;
-  -fx-padding: cfg.$popup-padding-y cfg.$popup-padding-x cfg.$popup-padding-y cfg.$popup-padding-x;
+  -fx-padding: 1;
   -fx-background-radius: cfg.$border-radius, cfg.$inner-border-radius;
   @include effects.shadow(-color-shadow-default, cfg.$popup-shadow-radius, cfg.$popup-shadow-spread);
 

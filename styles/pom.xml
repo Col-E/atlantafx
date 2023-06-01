@@ -38,6 +38,7 @@
                         <arg>${scss.inputDir}/cupertino-light.scss:${css.outputDir}/cupertino-light.css</arg>
                         <arg>${scss.inputDir}/cupertino-dark.scss:${css.outputDir}/cupertino-dark.css</arg>
                         <arg>${scss.inputDir}/dracula.scss:${css.outputDir}/dracula.css</arg>
+                        <arg>${scss.inputDir}/recaf.scss:${css.outputDir}/recaf.css</arg>
                         <arg>--no-source-map</arg>
                     </args>
                 </configuration>

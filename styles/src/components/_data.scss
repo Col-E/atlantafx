@@ -62,6 +62,7 @@ $tree-cell-indent: 1.2em !default; // default JavaFX values is 18px
   -color-cell-border: $color-cell-border;
   -color-disclosure:  $color-disclosure;
 
+  -fx-background-color: $color-cell-bg;
   -fx-border-color: -color-cell-border;
   -fx-border-width: cfg.$border-width;
   -fx-border-radius: 0;

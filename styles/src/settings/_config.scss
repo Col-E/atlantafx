@@ -53,13 +53,13 @@ $checkbox-label-padding:  2px !default;
 // menu
 $popup-padding-x:     5px !default;
 $popup-padding-y:     5px !default;
-$popup-shadow-radius: if($darkMode, 8px, 6px) !default;
-$popup-shadow-spread: if($darkMode, 0.6, 0.3) !default;
-$popup-radius:        5px !default;
+$popup-shadow-radius: 8px !default;
+$popup-shadow-spread: 0px !default;
+$popup-radius:        0px !default;
 $menubar-padding-x:   4px !default;
 $menubar-padding-y:   4px !default;
-$menu-padding-x:      $padding-x !default;
-$menu-padding-y:      $padding-y !default;
+$menu-padding-x:      8px !default;
+$menu-padding-y:      8px !default;
 
 // separators
 $separators: ("small": 0.25em, "medium": 0.75em, "large": 1.5em) !default;

@@ -42,7 +42,7 @@ $tab-lr-label-padding-x-dense: 0.3em !default;
 $tab-lr-label-padding-y:       0.2em !default;
 $tab-lr-label-padding-y-dense: 0.15em !default;
 
-$header-border-width: 2px !default;
+$header-border-width: 1px !default;
 
 // floating tabs
 $color-float-header-area: -color-bg-inset  !default;
@@ -124,7 +124,7 @@ $header-classic-padding-y:   5px !default;
         }
 
         &:hover {
-          -fx-background-color: $color-tb-border-hover, $color-tb-bg-hover;
+          -fx-background-color: -color-base-4, $color-tb-bg-hover;
         }
 
         &:top:selected,
@@ -269,8 +269,8 @@ $header-classic-padding-y:   5px !default;
 
           >.tab-container {
             -fx-background-color: $color-separator, $color-float-bg;
-            -fx-background-insets: 0, 0 1 0 0;
-            -fx-background-radius: 0;
+            -fx-background-insets: 0, 1;
+            -fx-background-radius: cfg.$border-radius;
             -fx-border-radius: cfg.$border-radius;
             // an ugly hack to create right padding for the close button
             // sadly, it's not possible other way
@@ -285,11 +285,31 @@ $header-classic-padding-y:   5px !default;
             }
           }
 
-          &:hover,
-          &:selected {
+          &:hover {
             >.tab-container {
               -fx-background-color: -color-tab-bg-selected;
               -fx-border-color: -color-tab-border-selected, transparent;
+
+            >.tab-label {
+                -fx-fill: -color-tab-fg-selected;
+                -fx-text-fill: -color-tab-fg-selected;
+
+                >* {
+                  -fx-fill: -color-tab-fg-selected;
+                  -fx-icon-color: -color-tab-fg-selected;
+                }
+              }
+
+              >.tab-close-button {
+                -fx-background-color: -color-tab-fg-selected;
+              }
+            }
+          }
+
+          &:selected {
+            >.tab-container {
+              -fx-background-color: -color-tab-bg-selected;
+              -fx-border-color: -color-accent-4, transparent;
 
             >.tab-label {
                 -fx-fill: -color-tab-fg-selected;
