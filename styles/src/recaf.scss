@@ -4,16 +4,16 @@
 @use "settings/utils" as utils;
 
 $dark_0: rgb(0, 0, 0);
-$dark_1: rgb(28, 28, 30);
-$dark_2: rgb(35, 35, 37);
-$dark_3: rgb(44, 44, 46);
-$dark_4: rgb(50, 50, 53);
-$dark_5: rgb(66, 66, 67);
+$dark_1: rgb(28, 28, 28);
+$dark_2: rgb(35, 35, 35);
+$dark_3: rgb(44, 44, 44);
+$dark_4: rgb(50, 50, 50);
+$dark_5: rgb(66, 66, 66);
 
-$systemFill:           rgba(120, 120, 128, 0.36);
-$secondarySystemFill:  rgba(120, 120, 128, 0.32);
-$tertiarySystemFill:   rgba(118, 118, 128, 0.24);
-$quaternarySystemFill: rgba(118, 118, 128, 0.18);
+$systemFill:           rgba(120, 120, 120, 0.36);
+$secondarySystemFill:  rgba(120, 120, 120, 0.32);
+$tertiarySystemFill:   rgba(118, 118, 118, 0.24);
+$quaternarySystemFill: rgba(118, 118, 118, 0.18);
 
 $systemBlue:   rgb(10, 132, 255);
 $systemGreen:  rgb(50, 215, 75);
@@ -24,7 +24,7 @@ $systemPurple: rgb(191, 90, 242);
 $systemRed:    rgb(255, 69, 58);
 $systemTeal:   rgb(100, 210, 255);
 $systemYellow: rgb(255, 214, 10);
-$systemGray:   rgb(170, 170, 175);
+$systemGray:   rgb(170, 170, 170);
 
 $darkText:        rgba(0, 0, 0, 1);
 $lightText:       rgba(255, 255, 255, 0.6);
@@ -103,7 +103,7 @@ $opaqueSeparator: rgba(56, 56, 58, 1.0);
 @forward "settings/color-vars" with (
 
   $fg-default:           $label,
-  $fg-muted:             scale.$base-3,
+  $fg-muted:             scale.$base-5,
   $fg-subtle:            utils.flattenColor($dark_3, $secondaryLabel),
   $fg-onEmphasis:        $label,
 
@@ -178,7 +178,7 @@ $opaqueSeparator: rgba(56, 56, 58, 1.0);
   $color-cell-bg-selected: $dark_4,
   $color-header-bg: -color-bg-default,
   $color-header-fg: -color-fg-muted,
-  $color-cell-bg-selected-focused: -color-base-6
+  $color-cell-bg-selected-focused: -color-base-9
 );
 
 @forward "components/date-picker" as date-picker-* with (

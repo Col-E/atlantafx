@@ -16,7 +16,7 @@ $color-tb-border-hover: -color-border-default !default;
 
 $color-tb-bg-selected:     -color-bg-default      !default;
 $color-tb-fg-selected:     -color-fg-default      !default;
-$color-tb-border-selected: -color-accent-emphasis !default;
+$color-tb-border-selected: -color-accent-4 !default;
 
 // vertical tabs (lr = left+right)
 $color-lr-bg-hover:     -color-bg-subtle      !default;
@@ -309,7 +309,7 @@ $header-classic-padding-y:   5px !default;
           &:selected {
             >.tab-container {
               -fx-background-color: -color-tab-bg-selected;
-              -fx-border-color: -color-accent-4, transparent;
+              -fx-border-color: -color-accent-2, transparent;
 
             >.tab-label {
                 -fx-fill: -color-tab-fg-selected;
