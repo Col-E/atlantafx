@@ -175,10 +175,12 @@ $opaqueSeparator: rgba(56, 56, 58, 1.0);
 
 @forward "components/data" as data-* with (
   $color-cell-bg: $dark_2,
+  $color-cell-bg-hover: $dark_4,
+  $color-cell-bg-hover-focused: -color-base-9,
   $color-cell-bg-selected: $dark_4,
+  $color-cell-bg-selected-focused: -color-base-9,
   $color-header-bg: -color-bg-default,
   $color-header-fg: -color-fg-muted,
-  $color-cell-bg-selected-focused: -color-base-9
 );
 
 @forward "components/date-picker" as date-picker-* with (

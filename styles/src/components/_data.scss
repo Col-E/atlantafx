@@ -5,6 +5,10 @@
 
 $color-cell-bg:                  -color-bg-default !default;
 $color-cell-fg:                  -color-fg-default !default;
+$color-cell-bg-hover:            if(cfg.$darkMode, -color-base-6, -color-base-1) !default;
+$color-cell-fg-hover:            -color-fg-default !default;
+$color-cell-bg-hover-focused:    $color-cell-bg-hover !default;
+$color-cell-fg-hover-focused:    $color-cell-fg-hover !default;
 $color-cell-bg-selected:         if(cfg.$darkMode, -color-base-6, -color-base-1) !default;
 $color-cell-fg-selected:         -color-fg-default !default;
 $color-cell-bg-selected-focused: $color-cell-bg-selected !default;
@@ -54,6 +58,10 @@ $tree-cell-indent: 1.2em !default; // default JavaFX values is 18px
 
   -color-cell-bg: $color-cell-bg;
   -color-cell-fg: $color-cell-fg;
+  -color-cell-bg-hover: $color-cell-bg-hover;
+  -color-cell-fg-hover: $color-cell-fg-hover;
+  -color-cell-bg-hover-focused: $color-cell-bg-hover-focused;
+  -color-cell-fg-hover-focused: $color-cell-fg-hover-focused;
   -color-cell-bg-selected: $color-cell-bg-selected;
   -color-cell-fg-selected: $color-cell-fg-selected;
   -color-cell-bg-selected-focused: $color-cell-bg-selected-focused;
@@ -83,6 +91,22 @@ $tree-cell-indent: 1.2em !default; // default JavaFX values is 18px
   &.edge-to-edge {
     -fx-border-width: 0;
   }
+}
+
+// row hover
+.list-view>.virtual-flow>.clipped-container>.sheet>.list-cell:filled:hover,
+.tree-view>.virtual-flow>.clipped-container>.sheet>.tree-cell:filled:hover,
+.table-view>.virtual-flow>.clipped-container>.sheet>.table-row-cell:filled:hover,
+.tree-table-view>.virtual-flow>.clipped-container>.sheet>.tree-table-row-cell:filled:hover {
+  -color-cell-fg: -color-cell-fg-hover;
+  -fx-background-color: -color-cell-border, -color-cell-bg-hover;
+}
+.list-view:focused>.virtual-flow>.clipped-container>.sheet>.list-cell:filled:hover,
+.tree-view:focused>.virtual-flow>.clipped-container>.sheet>.tree-cell:filled:hover,
+.table-view:focused>.virtual-flow>.clipped-container>.sheet>.table-row-cell:filled:hover,
+.tree-table-view:focused>.virtual-flow>.clipped-container>.sheet>.tree-table-row-cell:filled:hover {
+  -color-cell-fg: -color-cell-fg-hover-focused;
+  -fx-background-color: -color-cell-border, -color-cell-bg-hover-focused;
 }
 
 // row selection (cellSelectionEnabled = false)
